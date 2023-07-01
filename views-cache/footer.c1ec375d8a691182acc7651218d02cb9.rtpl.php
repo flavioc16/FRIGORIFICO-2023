@@ -1,0 +1,29 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?>
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+        
+
+        <script src="/res/site/vendor/jquery/jquery.min.js"></script>
+        <script src="/res/site/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="/res/site/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <script src="/res/site/js/sb-admin-2.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="/res/site/js/demo/datatables-demo.js"></script>
+ 
+        <script type="text/javascript" src="/res/site/vendor/datatables.min.js"></script>
+        
+        <script>
+            $('#dataTable').DataTable( {
+                "language": {
+                    "url": "/res/site/vendor/brasil.js"
+                }
+            });
+            $('dataTable input').focus();
+        </script>
+    </body>
+    </head>
+</html>

@@ -1,0 +1,173 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
+<html>
+    <head>
+        <title>Frigorifico Central</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+       
+        <script src="/alert/alertify.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="icon" type="imagem/png" href="/res/site/img/logoicon.ico" />
+        
+        <link rel="stylesheet" href="/alert/css/alertify.min.css" />
+        <link rel="stylesheet" href="/alert/css/themes/default.min.css" />
+        <link rel="stylesheet" type="text/css" href="/res/site/vendor/datatables.min.css"/>
+        <link href="/res/site/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="/res/site/css/sb-admin-2.min.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+        <style>
+            input[type=text]{
+                text-transform:capitalize;
+            }
+            .upper{
+                text-transform:capitalize;
+            }
+            body::-webkit-scrollbar {
+                width: 10px;               /* width of the entire scrollbar */
+            }
+            body::-webkit-scrollbar-thumb {
+                background-color: rgb(179, 174, 166);    /* color of the scroll thumb */
+                border-radius: 20px;       /* roundness of the scroll thumb */
+                border: 3px solid rgb(179, 174, 166);  /* creates padding around scroll thumb */
+            }
+            .slidebar{
+                background-color: #1d1012;
+            }
+        </style>
+        <div id="wrapper">
+            <ul class="navbar-nav slidebar sidebar sidebar-dark accordion" id="accordionSidebar">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                    <div class="sidebar-brand-icon rotate-n-10">
+                        <img class="img-profile mt-2" style="width: 108%;" src="/res/site/img/logotopo.jpg">
+                        <!-- <img class="img-profile mt-2" style="width: 190px;" src="/res/site/img/frigorifico_central.png"> -->
+                    </div>
+                    
+                </a>
+                <li class="nav-item aa">
+                    <a class="nav-link" href="/">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Inicio [F2]</span>
+                    </a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    Controles
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clientesCollapse"
+                        aria-expanded="true" aria-controls="clientesCollapse">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Clientes</span>
+                    </a>
+                    <div id="clientesCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Funções de Clietes</h6>
+                            <a class="collapse-item" href="/clientes/create">Cadastrar Clientes</a>
+                            <a class="collapse-item" href="/clientes">Listar Clientes</a>
+                            <a class="collapse-item" href="/pagamentos">Pagamentos</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-list-ol"></i>
+                        <span>Produtos</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Funções de Produtos</h6>
+                            <a class="collapse-item" href="/produtos/create">Cadastrar Produtos</a>
+                            <a class="collapse-item" href="/produtos">Listar Produtos</a>
+                            <a class="collapse-item" href="/encomendas">Encomendas</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#promocoesDiarias"
+                        aria-expanded="true" aria-controls="promocoesDiarias">
+                        <i class="fas fa-fw fa-bookmark"></i>
+                        <span>Lembretes</span>
+                    </a>
+                    <div id="promocoesDiarias" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Funções de Lembretes</h6>
+                            <a class="collapse-item" href="/lembretes">Lembretes</a>
+                            <a class="collapse-item" href="/promocionais">Lembretes Promocionais</a>
+                            <!-- <a class="collapse-item" href="/produtos">Produtos em Promoção</a> -->
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#relatorios"
+                        aria-expanded="true" aria-controls="relatorios">
+                        <i class="fas fa-fw fa-calendar"></i>
+                        <span>Relatórios</span>
+                    </a>
+                    <div id="relatorios" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Funções Utilitárias:</h6>
+                            <a class="collapse-item" href="/relatorios">Compras Fiado</a>
+                            <a class="collapse-item" href="/relatorios/flavio">Compras á Vista</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#fornecedores"
+                        aria-expanded="true" aria-controls="fornecedores">
+                        <i class="fa fa-address-book"></i>
+                        <span>Fornecedores</span>
+                    </a>
+                    <div id="fornecedores" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Funções Fornecedores:</h6>
+                            <a class="collapse-item" href="/fornecedores/create">Cadastrar Fornecedor</a>
+                            <a class="collapse-item" href="/fornecedores/flavio">Listar Fornecedores</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#caixa"
+                        aria-expanded="true" aria-controls="caixa">
+                        <i class="fas fa-fw fa-calculator"></i>
+                        <span>Caixa</span>
+                    </a>
+                    <div id="caixa" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Funções de Caixa:</h6>
+                            <a class="collapse-item" href="#">Caixa</a>
+                            <a class="collapse-item" href="#">Entrada de Caixa</a>
+                            <a class="collapse-item" href="#">Saida de Caixa</a>
+                        </div>
+                    </div>
+                </li>
+                <hr class="sidebar-divider">
+            </ul>
+            <script>
+                $(document).ready( function () {
+                var table = $('#dataTable').DataTable();
+                    function foco(){
+                        $('div.dataTables_filter input', table.table().container()).focus();
+                    }
+                    setTimeout(foco, 1)
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    e = e || window.event;
+                    var code = e.which || e.keyCode;
+
+                    if(code == 113){
+                        window.location.href="/";
+                    }
+                });
+            </script>
